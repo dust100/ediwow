@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Friendly Reminders</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .reminder-box {
+      font-size: 1.8rem;
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      display: inline-block;
+      min-width: 300px;
+      max-width: 500px;
+      transition: all 0.5s ease;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ A Gentle Reminder</h1>
+  <div class="reminder-box" id="reminder">Loading reminder...</div>
+
+  <footer>
+    Made with ❤️ to keep you going
+  </footer>
+
+  <script>
+    const reminders = [
+      "Don't forget to eat 🍽️",
+      "Take a rest if you're tired 😴",
+      "Drink some water 💧",
+      "Get well soon 💖",
+      "Stretch for a bit 🧘‍♂️",
+      "You're doing great 💪",
+      "Breathe. Everything will be okay 🌈",
+      "You are loved 💗",
+      "Trust yourself 🌟",
+    ];
+
+    const reminderBox = document.getElementById("reminder");
+    let index = 0;
+
+    function showReminder() {
+      reminderBox.textContent = reminders[index];
+      index = (index + 1) % reminders.length;
+    }
+
+    showReminder(); // initial reminder
+    setInterval(showReminder, 8000); // change every 8 seconds
+  </script>
+</body>
+</html>
